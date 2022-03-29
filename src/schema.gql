@@ -11,15 +11,17 @@ input CreateUserDto {
 }
 
 type Mutation {
-  createUser(createUserDto: CreateUserDto!): User!
+  createUser(createUserDto: CreateUserDto!): UserDTO!
 }
 
 type Query {
-  users: [User!]!
+  user(id: String!): UserDTO!
+  users: [UserDTO!]!
 }
 
-type User {
-  age: Float!
+type UserDTO {
+  age: Float
   email: String!
+  id: ID!
   name: String!
 }
